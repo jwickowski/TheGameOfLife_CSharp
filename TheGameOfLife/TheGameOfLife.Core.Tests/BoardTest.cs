@@ -12,13 +12,13 @@ namespace TheGameOfLife.Core.Tests
         public void InitSimpleBoard()
         {
             Board board = new BoardArrayImp(new bool[1, 1] { { false } });
-           board.IsAlive(0,0).Should().BeFalse();
+            board.IsAlive(0, 0).Should().BeFalse();
         }
 
         [Fact]
         public void MakeAlive()
         {
-            var board = new BoardArrayImp(new bool[1,1] { { false } });
+            var board = new BoardArrayImp(new bool[1, 1] { { false } });
             board.MakeAlive(0, 0);
             board.IsAlive(0, 0).Should().BeTrue();
         }
@@ -26,7 +26,7 @@ namespace TheGameOfLife.Core.Tests
         [Fact]
         public void Kill()
         {
-            var board = new BoardArrayImp(new bool[1,1] { {true} });
+            var board = new BoardArrayImp(new bool[1, 1] { { true } });
             board.Kill(0, 0);
             board.IsAlive(0, 0).Should().BeFalse();
         }
@@ -50,18 +50,32 @@ namespace TheGameOfLife.Core.Tests
         [Fact]
         public void EightNeighbours()
         {
-            var board = new BoardArrayImp(new bool[3, 3] { { true, true, true}, { true, false, true }, { true, true, true } });
+            var board = new BoardArrayImp(new bool[3, 3]
+            {
+                { true, true, true},
+                { true, false, true },
+                { true, true, true }
+            });
             board.GetAliveNeighbours(1, 1).Should().Be(8);
         }
 
         [Fact]
         public void GetEmptyBoard()
         {
-            var board = new BoardArrayImp(new bool[4, 3] { { true, true, true }, { true, true, true }, { true, false, true }, { true, true, true } });
+            var board = new BoardArrayImp(new bool[4, 3]
+            {
+                { true, true, true },
+                { true, true, true },
+                { true, false, true },
+                { true, true, true }
+            });
 
             var expectedBoard = new bool[4, 3]
-            {{false, false, false}, {false, false, false}, {false, false, false}, {false, false, false}};
-            
+            {{false, false, false},
+            {false, false, false},
+            {false, false, false},
+            {false, false, false}};
+
             board.GetEmptyBoard().GetArray().ShouldBeEquivalentTo(expectedBoard);
         }
 
@@ -70,17 +84,17 @@ namespace TheGameOfLife.Core.Tests
         {
             var board = new BoardArrayImp(new bool[4, 3]
             {
-                { true, true, true }, 
-                { true, true, true }, 
-                { true, false, true }, 
+                { true, true, true },
+                { true, true, true },
+                { true, false, true },
                 { true, true, true }
             });
 
             var expectedBoard = new bool[4, 3]
             {
-                {true, true, true}, 
                 {true, true, true},
-                {true, false, true}, 
+                {true, true, true},
+                {true, false, true},
                 {true, true, true}
             };
 
