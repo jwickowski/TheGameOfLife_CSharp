@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoardArrayImp.cs" />
+    <Compile Include="BoardHashSetImp.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="LifeGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

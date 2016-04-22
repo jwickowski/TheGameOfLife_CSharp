@@ -24,7 +24,7 @@ namespace TheGameOfLife.Core.Tests
             var lifeGame = new LifeGame(board);
             Board newBoard = lifeGame.NextRound();
 
-            newBoard.GetArray().ShouldBeEquivalentTo(new bool[,] { { false, false } });
+            new ArrayableBoardDecorator(newBoard).GetArray().ShouldBeEquivalentTo(new bool[,] { { false, false } });
         }
 
         [Fact]
@@ -39,7 +39,7 @@ namespace TheGameOfLife.Core.Tests
             var lifeGame = new LifeGame(board);
             Board newBoard = lifeGame.NextRound();
 
-            newBoard.GetArray().ShouldBeEquivalentTo(new bool[,] { 
+            new ArrayableBoardDecorator(newBoard).GetArray().ShouldBeEquivalentTo(new bool[,] { 
                 { false, true, false },
                 { false, true, false },
                 { false, true, false } });
@@ -57,7 +57,7 @@ namespace TheGameOfLife.Core.Tests
             var lifeGame = new LifeGame(board);
             Board newBoard = lifeGame.NextRound();
 
-            newBoard.GetArray().ShouldBeEquivalentTo(new bool[,] {
+            new ArrayableBoardDecorator(newBoard).GetArray().ShouldBeEquivalentTo(new bool[,] {
                 { true, true, true },
                 { true, false, true },
                 { false, false, true } });
@@ -76,7 +76,7 @@ namespace TheGameOfLife.Core.Tests
             lifeGame.NextRound();
             Board newBoard = lifeGame.NextRound();
 
-            newBoard.GetArray().ShouldBeEquivalentTo(new bool[,] {
+            new ArrayableBoardDecorator(newBoard).GetArray().ShouldBeEquivalentTo(new bool[,] {
                { false, false, false },
                 { true, true, true },
                 { false, false, false }});

@@ -1,4 +1,6 @@
-﻿namespace tgol.App
+﻿using TheGameOfLife.Core;
+
+namespace tgol.App
 {
     public class LifeGame
     {

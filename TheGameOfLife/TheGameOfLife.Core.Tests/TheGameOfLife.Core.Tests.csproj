@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayableBoardDecorator.cs" />
+    <Compile Include="BoardHashSetImpTest.cs" />
+    <Compile Include="BoardArrayImpTest.cs" />
     <Compile Include="BoardTest.cs" />
     <Compile Include="LifeGameTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using tgol.App;
+using TheGameOfLife.Core;
 using Vizualizer;
 
 namespace TheGameOfLife.Visualisation
@@ -41,14 +42,14 @@ namespace TheGameOfLife.Visualisation
             //input[15, 11] = true;
 
 
-            var board = new BoardArrayImp(input);
+            Board board = new BoardArrayImp(input);
             var game = new LifeGame(board);
 
 
             while (true)
             {
-                Painter.Paint(input);
-                input = game.NextRound().GetArray();
+                Painter.Paint(board);
+                board = game.NextRound();
                 //Thread.Sleep(200);
                 Console.ReadLine();
 
