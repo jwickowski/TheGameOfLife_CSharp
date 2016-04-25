@@ -28,14 +28,6 @@ namespace TheGameOfLife.Core
             board.Add(new KeyValuePair<int, int>(x, y));
         }
 
-        public void Kill(int x, int y)
-        {
-            if (IsAlive(x, y))
-            {
-                board.Remove(new KeyValuePair<int, int>(x, y));
-            }
-        }
-
         public int GetAliveNeighbours(int x, int y)
         {
             var aliveNeighbours = 0;

@@ -28,14 +28,6 @@ namespace TheGameOfLife.Core.Tests
         }
 
         [Fact]
-        public void Kill()
-        {
-            var board = GetBoardFromArray(new bool[1, 1] { { true } });
-            board.Kill(0, 0);
-            board.IsAlive(0, 0).Should().BeFalse();
-        }
-
-        [Fact]
         public void OneNeighbour()
         {
             var board = GetBoardFromArray(new bool[1, 2] { { false, true } });

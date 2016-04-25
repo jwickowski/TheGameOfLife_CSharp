@@ -22,11 +22,6 @@ namespace TheGameOfLife.Core
             board[x, y] = true;
         }
 
-        public void Kill(int x, int y)
-        {
-            board[x, y] = false;
-        }
-
         public int GetAliveNeighbours(int x, int y)
         {
             var aliveNeighbours = 0;
